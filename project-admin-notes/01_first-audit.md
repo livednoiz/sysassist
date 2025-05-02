@@ -87,6 +87,8 @@ Dies betrifft sicherheitsrelevante Komponenten – u. a.:
 
 > 🔜 Im Anschluss folgt eine detaillierte Projektplanung mit Aufgabenverteilung und Zeitrahmen.
 
+---
+
 # 💻 Alternative Empfehlung: Migration in eine Proxmox Virtualisierungsumgebung (Proxmox VE)
 
 ## 🔍 Überblick
