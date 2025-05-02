@@ -166,6 +166,7 @@ Proxmox VE Host
 4. 🔄 Testmigration bestehender Dienste
 5. 🧪 Live-Testing & Lastverhalten prüfen
 6. 📂 Einrichtung von Backupserver & optionalem Monitoring
+> 🔜 Im Anschluss folgt eine detaillierte Projektplanung mit Aufgabenverteilung und Zeitrahmen.
 
 ---
 
