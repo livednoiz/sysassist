@@ -50,13 +50,13 @@ Diese Skripte führen System-Updates automatisch durch – stelle sicher, dass s
 
 ---
 
-📎 Lizenz
+## 📎 Lizenz
 
 Dieses Projekt steht unter der MIT-Lizenz. Nutzung auf eigene Verantwortung.
 
 ---
 
-## Weiterentwicklungsideen
+## 💡 Weiterentwicklungsideen
 
 * Neustart automatisch planen (z. B. via `at` oder `systemd-reboot`)
 * Support für Arch-/Alpine-Systeme
