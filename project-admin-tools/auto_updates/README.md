@@ -50,6 +50,12 @@ Diese Skripte führen System-Updates automatisch durch – stelle sicher, dass s
 
 ---
 
+📎 Lizenz
+
+Dieses Projekt steht unter der MIT-Lizenz. Nutzung auf eigene Verantwortung.
+
+---
+
 ## Weiterentwicklungsideen
 
 * Neustart automatisch planen (z. B. via `at` oder `systemd-reboot`)
