@@ -6,24 +6,34 @@
 ███───█───███─████─█──██─█─█─█──█──█─██────███───█───███─███─█──█─█────█──█──██
 ──█───█─────█─█──█─█──██─█───█──█──█──█──────█───█─────█───█─█──█─█────█──█──██
 ███───█───███─█──█─████──█───█─███─█──█────███───█───███─███─████─███─███─████─
-                                                   Smart Admin Toolkit for Plesk
+                                                   Smart Automation Toolkit
 ```
 
 ---
 
-**SysAssist** ist dein smarter Helfer für Linux-Server mit **Plesk**, **MariaDB** und modernen Anforderungen wie Migrationen (z. B. CentOS 7 → AlmaLinux 8).  
-Ein Muss für Admins mit Verantwortung – auch ohne formale Ausbildung.
+**SysAssist** ist ein flexibles Open-Source-Toolkit für Systemadministratoren, Entwickler und DevOps, die Aufgaben rund um Servermigration, Automatisierung und Systempflege effizient gestalten möchten.
+
+Dieses Repository stellt Werkzeuge bereit, die auf realen Szenarien basieren – insbesondere auf **Migrationsprojekten mit Plesk** sowie der Automatisierung gängiger Prozesse auf **Debian- und RHEL-basierten Distributionen**.
 
 ---
 
 ## 🚀 Features
 
-- ✅ **Backup & Recovery** für Plesk, MariaDB und Benutzerdaten
-- 🔍 **Pre-Migration Checks** für Repositories & Paketkonflikte
-- 🧹 **Modular & Transparent**: Jede Funktion als eigenes Shellscript
-- 📄 **.env-Support**: Einfache Anpassung ohne manuelles Editieren von Scripts
-- 📖 **Markdown-Dokumentation** für jeden Schritt
-- 🤖 Geplant: Interaktiver Modus für komplexe Migrationen wie `centos2alma`
+- ✅ **Skriptbasierte Systempflege** für APT/Snap-basierte Systeme
+- 🔁 **Migrationstools** für Plesk-Umgebungen (z. B. CentOS → AlmaLinux)
+- 🛠️ **Wartungshelfer** wie Update-Skripte, Umgebungschecks und Paketbereinigung
+- ⚙️ **Modularer Aufbau** für einfache Erweiterbarkeit
+- 📦 `.env`-Support zur Konfiguration individueller Workflows
+- 📄 Umfangreiche Markdown-Dokumentation zu Prozessen & Skripten
+
+---
+
+## 🧰 Anwendungsbeispiele
+
+- Migration einer bestehenden Plesk-Installation auf ein neues System
+- Erstellung automatisierter Upgrade-Skripte für Produktivsysteme
+- Wiederherstellung aus Backups nach Neuinstallation
+- Entwicklung eigener Module für projektspezifische Bedürfnisse
 
 ---
 
@@ -32,66 +42,53 @@ Ein Muss für Admins mit Verantwortung – auch ohne formale Ausbildung.
 ```bash
 git clone https://github.com/deinuser/sysassist.git
 cd sysassist
-cp .env.example .env
-nano .env      # Passe deine Umgebung an
-./backup.sh    # Starte z. B. das Backup-Modul
+chmod +x *.sh
+./deb-upgrade.sh   # Beispiel: Systemaktualisierung unter Debian/Ubuntu
 ```
-
-Weitere Anleitung zur vollständigen Plesk-Migration und Datensicherung findest du in der [tutorial.md](./tutorial.md).
 
 ---
 
-## 📁 Modulübersicht
+## 📁 Struktur
 
-| Modul             | Status   | Beschreibung                             |
-|-------------------|----------|------------------------------------------|
-| `backup.sh`       | ✅ Stable | Vollständiges Backup für Plesk & MariaDB |
-| `check_env.sh`    | ⚙️ Beta   | Systemprüfung für EL7 → EL8 Migration     |
-| `convert.sh`      | 🧪 Alpha  | Vorbereitung centos2alma                 |
-| `restore.sh`      | ⏳ Planung | Restore-Workflow für neues Zielsystem    |
+| Datei / Modul       | Status   | Beschreibung                               |
+|---------------------|----------|--------------------------------------------|
+| `deb-upgrade.sh`    | ✅ Stable | Vollständige Systemaktualisierung (APT/Snap)|
+| `backup.sh`         | 🧪 Beta   | Backup für Plesk, MariaDB & Konfigurationen |
+| `convert.sh`        | ⚙️ Alpha  | Vorbereitung für centos2alma-Migration      |
+| `check_env.sh`      | ⚙️ Beta   | Umgebungsprüfung und Validierung            |
+| `restore.sh`        | ⏳ Geplant | Restore-Workflow                            |
 
 ---
 
 ## 🎯 Zielgruppe
 
-> Dieses Tool ist für Sysadmins, Hoster, DevOps oder Quereinsteiger –  
-> alle, die Verantwortung für Linux-Systeme tragen (müssen oder wollen).
-
-Geeignet für:
-- 🧑‍💻 Linux-Admins mit SSH-Zugang
-- 🧠 Quereinsteiger mit Lernwille
-- 🧰 Hoster, die Plesk nicht nur klicken
-- 🪛 Freelancer mit Root-Verantwortung
+> Für Administratoren, Freelancer, DevOps und IT-Dienstleister,  
+> die wiederkehrende Aufgaben effizient und transparent erledigen wollen.
 
 ---
 
-## 🔐 Sicherheit & Transparenz
+## 🔐 Sicherheit & Philosophie
 
-- Keine versteckten Prozesse – alles Bash, alles offen.
-- `.env` sorgt für klar definierte Werte (z. B. Backup-Pfade, Domains).
-- Geplant: Checksums, Lockfiles und Restore-Validierung.
-
----
-
-## 🧪 Entwicklung & Beiträge
-
-> Du hast Ideen oder willst mitarbeiten? Pull Requests willkommen!  
-> Forke das Repo oder eröffne ein Issue für deinen Vorschlag.
+- Keine versteckten Prozesse – alles Bash, alles sichtbar.
+- Fokus auf **Nachvollziehbarkeit**, **Fehlertoleranz** und **Log-Verhalten**
+- `.env` zur sauberen Trennung von Konfiguration und Logik
+- Ziel: Tools, die man versteht und anpassen kann
 
 ---
 
 ## 📜 Lizenz
 
-MIT – Du darfst alles, solange du den ursprünglichen Hinweis belässt.  
-**Verantwortung bleibt bei dir.**
+MIT – Frei verwendbar, modifizierbar und verbreitbar.  
+**Verantwortung liegt beim Nutzer.**
 
 ---
 
-## 🦮 Unterstütze das Projekt
+## 🤝 Mitwirken
 
-Wenn dir **SysAssist** hilft, teile es mit anderen Admins.  
-Oder bring deine eigenen Module ein – ganz im Open-Source-Geist.
+Pull Requests, Ideen und Diskussionen sind willkommen.  
+> Starte ein Issue, wenn du Fragen oder Verbesserungsvorschläge hast.
 
 ---
 
-> 🤖 **SysAssist** macht aus Chaos Struktur. Und aus Admins smarte Macher.
+> 💡 **SysAssist** ist dein Werkzeugkasten für smarte Systemadministration –  
+> entstanden aus echter Praxis, gebaut für echte Einsätze.
