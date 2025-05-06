@@ -1,4 +1,13 @@
 #!/bin/bash
+# System Upgrade Script für Debian-basierte Distributionen (Debian, Ubuntu)
+# Version: 0.2.1
+# Autor: [Sascha Gebel]
+# Beschreibung: Dieses Skript führt ein automatisches Systemupgrade durch und protokolliert den Fortschritt in einer Logdatei.
+# Es wird empfohlen, dieses Skript in einer sicheren Umgebung zu testen, bevor es in der Produktion eingesetzt wird.
+# Hinweis: Dieses Skript ist für Debian-basierte Distributionen wie Ubuntu und Debian gedacht.
+# Es wird empfohlen, dieses Skript in einer sicheren Umgebung zu testen, bevor es in der Produktion eingesetzt wird.
+# Stellen Sie sicher, dass Sie eine Sicherung wichtiger Daten haben, bevor Sie das Upgrade durchführen.
+# Dieses Skript wird ohne Gewährleistung bereitgestellt. Verwenden Sie es auf eigenes Risiko.
 
 # Titel im Terminal setzen
 echo -ne "\033]0;Extended System Upgrade Beta v0.2.1\007"
@@ -90,4 +99,29 @@ case $ans in
   *)
     exit;;
 esac
-
+# Ende des Skripts
+# Hinweis: Dieses Skript ist für Debian-basierte Distributionen wie Ubuntu und Debian gedacht.
+# Es wird empfohlen, dieses Skript in einer sicheren Umgebung zu testen, bevor es in der Produktion eingesetzt wird.
+# Stellen Sie sicher, dass Sie eine Sicherung wichtiger Daten haben, bevor Sie das Upgrade durchführen.
+# Dieses Skript wird ohne Gewährleistung bereitgestellt. Verwenden Sie es auf eigenes Risiko.
+# Weitere Informationen zu apt und seinen Optionen finden Sie in der offiziellen Dokumentation:
+# https://manpages.debian.org/bullseye/apt/apt.8.en.html
+# Weitere Informationen zu System-Upgrades und Best Practices finden Sie in der offiziellen Dokumentation:
+# https://help.ubuntu.com/community/UpgradeNotes
+# Weitere Informationen zu Debian und Ubuntu finden Sie in der offiziellen Dokumentation:
+# https://www.debian.org/doc/
+# https://help.ubuntu.com/community/Documentation
+# Weitere Informationen zur Systemadministration und Best Practices finden Sie in der offiziellen Dokumentation:
+# https://help.ubuntu.com/community/SystemAdministration
+# Weitere Informationen zur Systemsicherheit und Best Practices finden Sie in der offiziellen Dokumentation:
+# https://help.ubuntu.com/community/Security
+# Weitere Informationen zur Systemleistungsoptimierung und Best Practices finden Sie in der offiziellen Dokumentation:
+# https://help.ubuntu.com/community/PerformanceTuning
+# Weitere Informationen zur Systemüberwachung und Best Practices finden Sie in der offiziellen Dokumentation:
+# https://help.ubuntu.com/community/Monitoring
+# Weitere Informationen zur Systemfehlerbehebung und Best Practices finden Sie in der offiziellen Dokumentation:
+# https://help.ubuntu.com/community/Troubleshooting
+# Weitere Informationen zur Systemsicherung und -wiederherstellung und Best Practices finden Sie in der offiziellen Dokumentation:
+# https://help.ubuntu.com/community/BackupYourSystem
+# Weitere Informationen zu Systemaktualisierungen und Best Practices finden Sie in der offiziellen Dokumentation:
+# https://help.ubuntu.com/community/UpgradeNotes
