@@ -19,12 +19,13 @@ Hilfsskripte zur schnellen Benutzeranlage – z. a. für Domains oder Projekte.
 
 ### ⚖️ Hauptskripte
 
-| Skript                                                                                                                                            | Beschreibung                                                                                                                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `info.sh`                                                                                                                                         | Interaktives Terminal-Menü zur Anzeige wichtiger Systeminfos wie Netzwerk, CPU, RAM, Prozesse, Kernel usw. Perfekt für einen schnellen Überblick bei Remotezugriff oder Erstkontakt mit einem System. |
-| `deb-upgrade.sh`                                                                                                                                  | Helfer zur Paketquellen-Aktualisierung oder Release-Vorbereitung unter Debian-basierten Systemen. Wird ggf. für `apt`-basierte Server in der Migrationsphase eingesetzt.                              |
-| `scripter.bash`                                                                                                                                   | Minimalistisches Tool zur schnellen Bearbeitung und ausführbaren Einrichtung eines neuen Shellscripts im Home-Verzeichnis. Ideal für spontane Skriptideen.                                            |
-| `plesk_backup/`                                                                                                                                   | Enthält: **`plesk_backup.sh`** Führt ein strukturiertes Plesk-Backup (inkl. Datenbanken & Einstellungen) durch – verwendbar vor Migrationen oder als manuelles On-Demand-Backup. |
+| Skript                        | Beschreibung                                                                                                                                                                                          |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `info.sh`                     | Interaktives Terminal-Menü zur Anzeige wichtiger Systeminfos wie Netzwerk, CPU, RAM, Prozesse, Kernel usw. Perfekt für einen schnellen Überblick bei Remotezugriff oder Erstkontakt mit einem System. |
+| `deb-upgrade.sh`              | Helfer zur Paketquellen-Aktualisierung oder Release-Vorbereitung unter Debian-basierten Systemen. Wird ggf. für `apt`-basierte Server in der Migrationsphase eingesetzt.                              |
+| `scripter.bash`               | Minimalistisches Tool zur schnellen Bearbeitung und ausführbaren Einrichtung eines neuen Shellscripts im Home-Verzeichnis. Ideal für spontane Skriptideen.                                            |
+| `plesk_backup/`               | Enthält: **plesk_backup.sh** Führt ein strukturiertes Plesk-Backup (inkl. Datenbanken & Einstellungen) durch – verwendbar vor Migrationen oder als manuelles On-Demand-Backup.                       |
+| red_hat_based_upgrade.sh | Helfer zur Paketquellen-Aktualisierung  unter Red-Hat-basierten Systemen (ab Version 8)                                                                                                               |
 
 ---
 
@@ -51,8 +52,8 @@ Navigiere mit **Pfeiltasten**, bestätige mit **Enter**, beende mit **Exit-Menü
 ## 🚀 Quickstart
 
 ```bash
-git clone https://github.com/livednoiz/sysassist.git
-cd sysassist/project-admin-tools/
+git clone https://github.com/deinuser/sysassist.git
+cd sysassist/Dokumente/sysassist/project-admin-tools/
 chmod +x *.sh
 ./info.sh
 ```
