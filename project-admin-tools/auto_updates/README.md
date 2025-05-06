@@ -62,36 +62,3 @@ Dieses Projekt steht unter der MIT-Lizenz. Nutzung auf eigene Verantwortung.
 * Support für Arch-/Alpine-Systeme
 * Logging per `logger` ins Syslog
 * Webhook-basierte Benachrichtigung (z. B. Discord, Slack)
-
-# ✅ Admin-Automation-Checklist
-
-🔁 **Priorisierte Reihenfolge nach Wirkung & Einfachheit**
-
-## ✅ 1. Systempflege & Updates
-- [x] Sicherheitsupdates automatisieren
-- [x] Upgrade-Skripte mit Logging (Debian/Red Hat)
-- [x] Reboot-Benachrichtigung bei Kernel-Updates
-
-## 💾 2. Backups & Snapshots
-- [ ] Automatische rsync- oder borg-Backups
-- [ ] Snapshot-Automation (LVM / ZFS / Btrfs)
-
-## 🔐 3. Sicherheit
-- [ ] Fail2Ban & IP-Whitelist/-Blacklist
-- [ ] Rootkit-Scan (Chkrootkit / RKHunter)
-- [ ] Integritätscheck mit AIDE oder OSSEC
-
-## 📈 4. Monitoring & Status
-- [ ] Ressourcennutzung loggen (RAM, CPU, Disk)
-- [ ] Watchdog-Skripte für wichtige Dienste
-- [ ] Alert-System bei Schwellenwertüberschreitung
-
-## 🧰 5. Admin-Komfort
-- [ ] Automatisiertes Anlegen von Benutzern inkl. SSH-Key-Setup
-- [ ] Skript für Log-Analyse (z. B. /var/log/auth.log)
-- [ ] Templates für neue Systemdienste (systemd)
-
-## 📤 6. Benachrichtigungssystem
-- [ ] Anbindung von E-Mail-Benachrichtigungen
-- [ ] Matrix- oder Telegram-Bot für Status-Updates
-- [ ] Wöchentlicher Report-Versand
