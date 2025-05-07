@@ -53,7 +53,7 @@ Navigiere mit **Pfeiltasten**, bestätige mit **Enter**, beende mit **Exit-Menü
 
 ```bash
 git clone https://github.com/deinuser/sysassist.git
-cd sysassist/Dokumente/sysassist/project-admin-tools/
+cd sysassist/project-admin-tools/
 chmod +x *.sh
 ./info.sh
 ```
