@@ -84,8 +84,8 @@ MIT – Offen für jegliche Nutzung. Änderungen, Verbesserungen oder Ergänzung
 - [x] Reboot-Benachrichtigung bei Kernel-Updates
 
 ## 💾 2. Backups & Snapshots
-- [ ] Automatische rsync- oder borg-Backups
-- [ ] Snapshot-Automation (LVM / ZFS / Btrfs)
+- [x] Automatische rsync- oder borg-Backups
+- [x] Snapshot-Automation (LVM / ZFS / Btrfs)
 
 ## 🔐 3. Sicherheit
 - [ ] Fail2Ban & IP-Whitelist/-Blacklist
