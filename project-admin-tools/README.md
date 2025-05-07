@@ -52,7 +52,7 @@ Navigiere mit **Pfeiltasten**, bestätige mit **Enter**, beende mit **Exit-Menü
 ## 🚀 Quickstart
 
 ```bash
-git clone https://github.com/deinuser/sysassist.git
+git clone https://github.com/livednoiz/sysassist.git
 cd sysassist/project-admin-tools/
 chmod +x *.sh
 ./info.sh
