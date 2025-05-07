@@ -1,4 +1,4 @@
-# LVM Snapshot Automation
+# 🗂️ LVM Snapshot Automation
 
 Dieses Skript automatisiert die Erstellung von Snapshots auf LVM-Volumes, um regelmäßige Backups des Systems und seiner Daten zu gewährleisten. Es bietet einfache Anpassungsoptionen und kann in regelmäßigen Abständen ausgeführt werden, um eine effiziente Verwaltung der Snapshots zu ermöglichen.
 
