@@ -90,3 +90,9 @@ Speichere deine eigene Konfigurationsdatei unter:
 ```
 
 Stelle sicher, dass der Webserver Anfragen auf diese Datei korrekt ausliefert.
+
+---
+
+## 📝 Notiz: Automatisierung der DNS-Einträge für mehrere Domains
+
+Dieser Abschnitt wird derzeit recherchiert und wird daher später bearbeitet, um ein reibungslose Multidomain-Setup realisieren zu können.
