@@ -78,6 +78,8 @@ https://autodiscover.example.com/autodiscover/autodiscover.xml
 
 Wenn du **50 oder mehr Domains** verwalten möchtest, ist es sinnvoll, den Prozess der Autoconfig- und Autodiscover-Integration zu automatisieren. Dies spart viel Zeit und stellt sicher, dass die Konfiguration für alle Domains korrekt und effizient durchgeführt wird. Plesk bietet eine **Autodns-Anbindung**, die dies unterstützt.
 
+---
+
 ### 🔄 Schritte zur Automatisierung der Konfiguration
 
 1. **Automatisierung der DNS-Einträge für mehrere Domains**
@@ -121,6 +123,8 @@ Wenn du **50 oder mehr Domains** verwalten möchtest, ist es sinnvoll, den Proze
 5. **Verwendung der Plesk API**
 
    * Falls du eine präzisere Kontrolle benötigst, kannst du die **Plesk-API** verwenden, um spezifische Aktionen wie **Domain-Verwaltung**, **DNS-Einträge hinzufügen** und **Verzeichnistrukturen** zu automatisieren. Dadurch erhältst du noch mehr Flexibilität bei der Verwaltung vieler Domains.
+
+---
 
 ### 📊 Vorteile dieser Lösung
 
