@@ -1,4 +1,4 @@
-# 🔐 Sicherheit automatisieren – Admin Automation Series (Teil 3)
+# 🔐 Sicherheit automatisieren – Admin Automation Series
 
 Willkommen zum dritten Teil unserer Admin-Automationsreihe! In diesem Abschnitt dreht sich alles um **Sicherheit** – die wohl wichtigste Säule eines stabilen Systems. Hier automatisieren wir zentrale Sicherheitsaufgaben, damit du ruhig schlafen kannst. 😴🔒
 
