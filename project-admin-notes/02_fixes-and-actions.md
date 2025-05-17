@@ -91,5 +91,5 @@ certbot certificates
 
 ---
 
-Maintainer: \[Dein Name oder GitHub Handle]
+Maintainer: [Sascha Gebel]
 Letztes Update: Mai 2025
