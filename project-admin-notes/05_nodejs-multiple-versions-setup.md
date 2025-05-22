@@ -78,4 +78,6 @@ Wenn die Node.js-Versionen installiert wurden, erkennt Plesk sie meist automatis
 * [Node.js Downloads](https://nodejs.org/en/download/releases)
 * [Plesk Dokumentation (Node.js Extension)](https://docs.plesk.com/en-US/obsidian/administrator-guide/web-hosting/node-js-support.79382/)
 
+---
 
+**Happy Hosting! 🧑‍💻✨**
