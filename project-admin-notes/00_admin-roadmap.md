@@ -1,81 +1,86 @@
-# 🛠️ Plesk Server Setup & Engineering Roadmap
+# 🧭 Plesk Server Engineering Roadmap
 
-Willkommen zur Roadmap für die vollständige und sichere Konfiguration eines Plesk-Servers unter AlmaLinux 9 mit erweiterten Entwickler-Tools und Sicherheitsfunktionen. Diese Checkliste führt dich Schritt für Schritt durch alle relevanten Maßnahmen.
+Willkommen zur strukturierten Roadmap für die umfassende Administration und Absicherung eines Plesk-Servers unter AlmaLinux 9.
 
----
-
-## ✅ Abgehakt
-
-### 🔌 Apache Module Konfiguration
-
-* [x] Fehlende Module installiert: `mod_perl`, `mod_lua`, `mod_cache`
-* [x] Deaktivierte Module aktiviert: `speling`, `sysenv`, `usertrack`
+Diese Checkliste dient zur Übersicht über die wichtigsten Schritte zur Einrichtung, Absicherung und Erweiterung der Serverumgebung. Jeder Punkt kann bei Erledigung abgehakt werden. ✅
 
 ---
 
-## 🛡️ Als nächstes: Sicherheit einrichten
+## ✅ 1. Apache Module Check & Activation
 
-### 🔐 Fail2Ban Setup
+🔧 *Fehlende Module installieren / aktivieren:*
 
+* [x] `mod_perl`
+* [x] `mod_lua`
+* [x] `mod_speling`
+* [x] `mod_usertrack`
+* [x] `mod_sysenv`
+
+---
+
+## ⛓️ 2. Fail2Ban Setup (Absicherung ohne SSH)
+
+🔒 *Implementierung der Fail2Ban-Regeln und Konfiguration der jail.local*
+
+* [ ] Installation und Aktivierung von `fail2ban`
 * [ ] Konfiguration der `jail.local`
-* [ ] Filter-Regeln prüfen & anpassen
-* [ ] Services absichern: Plesk-Panel, Webmail, Apache, evtl. Mailserver
-* [ ] SSH Jail ggf. weglassen (SSH deaktiviert)
+* [ ] Whitelisting vertrauenswürdiger IPs
+* [ ] Testen der Jail-Reaktionen (fail2ban-client / Logs prüfen)
+* [ ] Ergänzende Firewalld-Regeln prüfen oder implementieren
 
 ---
 
-## 🧩 Node.js Multi-Version Umgebung
+## 🟢 3. Node.js Multi-Version Support
 
-### 📦 nodeenv Integration
+🧰 *NodeJS Umgebung für Plesk bereitstellen:*
 
-* [ ] Installation von `nodeenv`
-* [ ] Bereitstellung folgender NodeJS-Versionen:
+* [ ] Verzeichnisstruktur in `/opt/plesk/node/` vorbereiten
+* [ ] Automatisiertes Bash-Skript zur Installation von:
 
-  * [ ] v16.20.2
-  * [ ] v18.20.8
-  * [ ] v20.19.2
-  * [ ] v22.16.0
-* [ ] Erstellung eines Automatisierungsskripts (Download, Entpacken, Verlinken)
-* [ ] Integration in Plesk Dropdown
-
----
-
-## 🐍 Python Umgebung
-
-### 🧰 pyenv & virtualenv
-
-* [ ] Installation `pyenv`
-* [ ] Mehrere Python-Versionen bereitstellen
-* [ ] Integration von `virtualenv`, `setuptools`, `pip`
-* [ ] Systemweite Umgebung + Benutzerkonfiguration
+  * [ ] Node.js `16.20.2`
+  * [ ] Node.js `18.20.8`
+  * [ ] Node.js `20.19.2`
+  * [ ] Node.js `22.16.0`
+* [ ] Anpassung Plesk-Umgebungsvariablen für Zugriff über Dropdown
 
 ---
 
-## 💙 Flutter Entwicklungsumgebung
+## 🐍 4. Python3 Environment (pyenv / virtualenv)
 
-### 📱 Flutter SDK Setup
+📦 *Mehrere Python-Versionen und Umgebungen ermöglichen:*
 
-* [ ] Installation Flutter SDK (aktuelle stable Version)
-* [ ] Einrichtung PATH & Ausführungsrechte
-* [ ] Android SDK optional (für Mobile Builds)
-* [ ] `flutter doctor` Test durchführen
-* [ ] Integration via pyenv/VSCode/Plesk-Shell vorbereiten (je nach Bedarf)
-
----
-
-## ⚙️ Weitere geplante Schritte (optional)
-
-* [ ] Hardened Kernel Module prüfen
-* [ ] Fail2Ban Erweiterung mit GeoIP
-* [ ] Docker-Umgebung in Plesk konfigurieren
-* [ ] Containerisierte Deployments (Node/Python)
-* [ ] Automatisierte Backups (lokal & remote)
-* [ ] Git-basierte CI/CD-Pipeline über Plesk Webhooks
+* [ ] `pyenv` installieren
+* [ ] Python-Versionen via `pyenv install` (z. B. 3.10, 3.11, 3.12)
+* [ ] `virtualenv`, `setuptools`, `pipx` einrichten
+* [ ] Globale vs. projektspezifische Umgebungen konfigurieren
 
 ---
 
-📌 **Hinweis:** Diese Roadmap wird fortlaufend ergänzt. Melde dich bei Bedarf für neue Module, Dienste oder geplante Integrationen.
+## ⚙️ 5. Weitere sinnvolle Plesk & Server Engineering Aufgaben
+
+🛠️ *Zur langfristigen Wartung & Performanceoptimierung:*
+
+* [ ] Automatisierte Backup-Strategien
+* [ ] Logrotate & Journald-Optimierung
+* [ ] Firewall-Konzept / SSH Absicherung (z. B. via PermitRootLogin=no)
+* [ ] Plesk Extensions prüfen (z. B. Let's Encrypt, Watchdog, Security Advisor)
+* [ ] Monitoring einrichten (z. B. Zabbix, Netdata, Prometheus)
+* [ ] Ressourcenüberwachung & Autoresponder für Systemzustände
+* [ ] Update-Management via dnf-automatic
 
 ---
 
-🧠 *Stay curious, stay secure!* 🚀
+## 📜 Dokumentation & Repositories
+
+📁 *Zentrale Repositories zur Dokumentation & Automatisierung:*
+
+* [ ] `sysassist` GitHub Projekt mit allen Skripten, Templates & Readmes
+* [ ] README-Dateien regelmäßig aktualisieren und versionieren
+
+---
+
+🔚 **Ziel:** Ein sicherer, vielseitig einsatzfähiger Server unter Plesk mit moderner Entwicklungsumgebung und maximaler Wartbarkeit. 💪
+
+---
+
+> Bei Fragen oder zur Weiterentwicklung dieser Roadmap: einfach ansprechen! 🧠
