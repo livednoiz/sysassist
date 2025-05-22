@@ -36,11 +36,9 @@ sudo yum install mod_cache
 Auf CentOS sind Apache-Module oft automatisch aktiv nach Installation. Um sicherzugehen, kann man in der Konfigurationsdatei /etc/httpd/conf.modules.d/ prüfen, ob folgende Zeilen vorhanden und nicht auskommentiert sind:
 
 ```bash
-LoadModule file_cache_module modules/mod_cache.so
 LoadModule lua_module modules/mod_lua.so
 LoadModule perl_module modules/mod_perl.so
 LoadModule speling_module modules/mod_speling.so
-LoadModule env_module modules/mod_env.so  # für sysenv
 LoadModule usertrack_module modules/mod_usertrack.so
 ```
 
