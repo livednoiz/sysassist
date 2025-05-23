@@ -170,4 +170,132 @@ Dies ist Teil von `sysassist`, einem offenen Projekt zur Systemadministration.
 
 ---
 
+# 🛡️ Fail2Ban Setup unter AlmaLinux 9
+
+Sicherer Serverbetrieb beginnt mit der effektiven Absicherung gegen Brute-Force-Angriffe. Dieses Dokument beschreibt die Installation und Konfiguration von **Fail2Ban** unter **AlmaLinux 9**, speziell mit Fokus auf den SSH-Dienst.
+
+---
+
+## 🔧 1. Installation
+
+```bash
+sudo dnf install epel-release -y
+sudo dnf install fail2ban -y
+```
+
+> 💡 Fail2Ban ist im EPEL-Repository enthalten.
+
+---
+
+## 📁 2. Konfigurationsverzeichnis prüfen
+
+```bash
+ls /etc/fail2ban
+```
+
+Wichtige Dateien:
+
+* `jail.conf` (nicht direkt bearbeiten)
+* `jail.local` (eigene Konfigurationen)
+* `filter.d/` (Filterdefinitionen für Dienste)
+
+---
+
+## 📝 3. jail.local erstellen
+
+```bash
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+sudo nano /etc/fail2ban/jail.local
+```
+
+### Beispiel-Konfiguration:
+
+```ini
+[DEFAULT]
+bantime = 1h
+findtime = 10m
+maxretry = 5
+backend = systemd
+
+[sshd]
+enabled = true
+port    = ssh
+filter  = sshd
+logpath = %(sshd_log)s
+```
+
+> 🔐 Aktiviert den SSH-Schutz mit systemd-Backend
+
+---
+
+## 🚦 4. Dienst starten & aktivieren
+
+```bash
+sudo systemctl enable fail2ban
+sudo systemctl start fail2ban
+sudo systemctl status fail2ban
+```
+
+---
+
+## 📊 5. Status & Überwachung
+
+```bash
+sudo fail2ban-client status sshd
+```
+
+Zeigt aktuell gebannte IPs und Status des SSH-Jails.
+
+---
+
+## 🧱 6. Firewall-Integration (optional)
+
+```bash
+sudo firewall-cmd --permanent --add-service=ssh
+sudo firewall-cmd --reload
+```
+
+---
+
+## ⚙️ 7. SELinux-Kompatibilität (optional)
+
+Falls Fail2Ban durch SELinux blockiert wird:
+
+```bash
+sudo semanage permissive -a fail2ban_t
+```
+
+---
+
+## 🧰 8. Weitere Dienste absichern
+
+Fail2Ban kann erweitert werden, um weitere Dienste wie z. B. **Apache**, **Dovecot**, **Plesk** oder **Postfix** zu schützen. Filter findest du in:
+
+```bash
+/etc/fail2ban/filter.d/
+```
+
+---
+
+## 📌 Hinweis zur SSH-Konfiguration
+
+Wenn Plesk-Migration oder Admin-Zugang über SSH erfolgen soll, muss in `/etc/ssh/sshd_config` vorübergehend folgendes aktiviert sein:
+
+```ini
+PermitRootLogin yes
+PasswordAuthentication yes
+```
+
+Nach erfolgreicher Migration können diese wieder auf `no` gesetzt und SSH ggf. deaktiviert oder durch Fail2Ban abgesichert werden.
+
+---
+
+> 🚀 Bereit für sicheres Server-Hosting mit Fail2Ban!
+
+---
+
+**Nächster Schritt:** Erweiterung des jail.local um weitere Dienste und automatische Bann-Benachrichtigungen via E-Mail 📧
+
+---
+
 🛠️ Erstellt mit ❤️ für Server-Sicherheit
