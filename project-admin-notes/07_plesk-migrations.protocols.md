@@ -62,3 +62,103 @@ Stelle sicher, dass folgende Tools auf beiden Servern verfügbar sind:
 ---
 
 > 📘 Diese Datei dient als technische Grundlage und sollte während der gesamten Migration zugänglich bleiben.
+
+---
+
+# 🔐 SSH Root Login für Plesk-Migration sicher verwalten
+
+## 📦 Zweck
+
+Diese Anleitung beschreibt die sichere temporäre Aktivierung von `root`-SSH-Zugriff, um eine **Plesk-zu-Plesk-Migration** zwischen zwei Servern erfolgreich durchzuführen.
+
+---
+
+## ⚙️ Voraussetzungen
+
+* Ziel: Migration **kompletter Plesk-Accounts** (inkl. Datenbanken, Domains, Dateien, Einstellungen)
+* Protokoll: SSH (standardmäßig über Port `22`)
+* Benutzer: `root` oder ein Benutzer mit vollständigen `sudo`-Rechten
+
+---
+
+## 📁 Schritte zur temporären Root-Aktivierung
+
+1. **Öffne die SSH-Konfiguration**:
+
+   ```bash
+   nano /etc/ssh/sshd_config
+   ```
+
+2. **Ändere oder ergänze folgende Direktive**:
+
+   ```ini
+   PermitRootLogin yes
+   ```
+
+3. **Lade den SSH-Dienst neu**:
+
+   ```bash
+   systemctl reload sshd
+   ```
+
+4. ✅ **Führe die Plesk-Migration über das Plesk-Webinterface aus**:
+
+   * Tools & Einstellungen → Migration & Transfer-Manager
+   * Ziel-Hostname, Root-Zugangsdaten und SSH-Port angeben
+
+---
+
+## 🛡️ Sicherheitshinweise
+
+> Die dauerhafte Aktivierung von `PermitRootLogin yes` kann ein erhebliches Sicherheitsrisiko darstellen.
+
+**Unmittelbar nach erfolgreicher Migration:**
+
+1. **Deaktiviere den Root-Login wieder**:
+
+   ```ini
+   PermitRootLogin no
+   ```
+
+2. **Optional: SSH-Port ändern (z. B. auf 2222)**:
+
+   ```ini
+   Port 2222
+   ```
+
+3. **Aktiviere `Fail2Ban` zur Brute-Force-Abwehr**:
+
+   * Empfohlene Jails: `sshd`, `plesk-login`, `apache-auth`, `recidive`
+
+4. **Lade SSH erneut**:
+
+   ```bash
+   systemctl reload sshd
+   ```
+
+---
+
+## 🚒 Alternative: Migration ohne Root
+
+Wenn Root-Zugriff nicht erlaubt ist:
+
+* Erstelle einen Benutzer mit `sudo`-Rechten
+* Füge ihn zur Datei `/etc/sudoers` hinzu:
+
+  ```bash
+  username ALL=(ALL) NOPASSWD:ALL
+  ```
+* Gib die Zugangsdaten im Migrations-Tool an
+
+**⚠️ Achtung**: Nicht jede Plesk-Version unterstützt Migration mit nicht-root Benutzern vollständig!
+
+---
+
+## ✅ Fazit
+
+> Für reibungslose und vollständige Migrationen ist der `root`-SSH-Zugang temporär erforderlich. Sicherheit und Rücksetzung danach sind entscheidend!
+
+---
+
+**🔐 Sicherheit beginnt nach der Migration – nicht davor!**
+
