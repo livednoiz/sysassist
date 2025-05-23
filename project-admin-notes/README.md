@@ -18,14 +18,22 @@ Diese Checkliste dient zur Übersicht über die wichtigsten Schritte zur Einrich
 
 ---
 
-## ⛓️ 2. Fail2Ban Setup (Absicherung ohne SSH)
+## ⛓️ 2. Fail2Ban Setup (inkl. SSH-Absicherung)
 
 🔒 *Implementierung der Fail2Ban-Regeln und Konfiguration der jail.local*
 
 * [ ] Installation und Aktivierung von `fail2ban`
-* [ ] Konfiguration der `jail.local`
-* [ ] Whitelisting vertrauenswürdiger IPs
-* [ ] Testen der Jail-Reaktionen (fail2ban-client / Logs prüfen)
+* [ ] Konfiguration der `jail.local` mit folgenden aktiven Jails:
+  * `sshd`
+  * `plesk-login`
+  * `plesk-apilogin`
+  * `postfix`
+  * `dovecot`
+  * `proftpd` *(oder alternativ `vsftpd` / `pure-ftpd`)*
+  * `recidive`
+* [ ] Verwendung von `firewallcmd-rich-rules` als `banaction` für firewalld
+* [ ] Whitelisting vertrauenswürdiger IPs (`ignoreip`)
+* [ ] Testen der Jail-Reaktionen (`fail2ban-client`, Log-Auswertung)
 * [ ] Ergänzende Firewalld-Regeln prüfen oder implementieren
 
 ---
