@@ -22,19 +22,19 @@ Diese Checkliste dient zur Übersicht über die wichtigsten Schritte zur Einrich
 
 🔒 *Implementierung der Fail2Ban-Regeln und Konfiguration der jail.local*
 
-* [ ] Installation und Aktivierung von `fail2ban`
-* [ ] Konfiguration der `jail.local` mit folgenden aktiven Jails:
+* [x] Konfiguration Firewalld Zone Plesk
+* [x] Installation und Aktivierung von `fail2ban`
+* [x] Konfiguration der `jail.local` mit folgenden aktiven Jails:
   * `sshd`
-  * `plesk-login`
-  * `plesk-apilogin`
+  * `plesk-panel`
   * `postfix`
   * `dovecot`
   * `proftpd` *(oder alternativ `vsftpd` / `pure-ftpd`)*
   * `recidive`
-* [ ] Verwendung von `firewallcmd-rich-rules` als `banaction` für firewalld
-* [ ] Whitelisting vertrauenswürdiger IPs (`ignoreip`)
-* [ ] Testen der Jail-Reaktionen (`fail2ban-client`, Log-Auswertung)
-* [ ] Ergänzende Firewalld-Regeln prüfen oder implementieren
+* [x] Verwendung von `firewallcmd-rich-rules` als `banaction` für firewalld
+* [x] Whitelisting vertrauenswürdiger IPs (`ignoreip`)
+* [x] Testen der Jail-Reaktionen (`fail2ban-client`, Log-Auswertung)
+* [x] Ergänzende Firewalld-Regeln prüfen oder implementieren
 
 ---
 
