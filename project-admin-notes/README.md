@@ -26,7 +26,7 @@ Diese Checkliste dient zur Übersicht über die wichtigsten Schritte zur Einrich
 * [x] Installation und Aktivierung von `fail2ban`
 * [x] Konfiguration der `jail.local` mit folgenden aktiven Jails:
   * `sshd`
-  * `plesk-panel`
+  * `plesk-panel` 
   * `postfix`
   * `dovecot`
   * `proftpd` *(oder alternativ `vsftpd` / `pure-ftpd`)*
