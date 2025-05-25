@@ -42,14 +42,12 @@ Diese Checkliste dient zur Übersicht über die wichtigsten Schritte zur Einrich
 
 🧰 *NodeJS Umgebung für Plesk bereitstellen:*
 
-* [ ] Verzeichnisstruktur in `/opt/plesk/node/` vorbereiten
-* [ ] Automatisiertes Bash-Skript zur Installation von:
+* [x] Verzeichnisstruktur in `/opt/plesk/node/` vorbereiten
+* [x] Automatisiertes Bash-Skript zur Installation von:
 
-  * [ ] Node.js `16.20.2`
-  * [ ] Node.js `18.20.8`
-  * [ ] Node.js `20.19.2`
-  * [ ] Node.js `22.16.0`
-* [ ] Anpassung Plesk-Umgebungsvariablen für Zugriff über Dropdown
+  * [x] Node.js `22`
+  * [x] Node.js `24`
+* [x] Anpassung Plesk-Umgebungsvariablen für Zugriff über Dropdown
 
 ---
 
